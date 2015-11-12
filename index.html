@@ -1,0 +1,80 @@
+<!-- ROXANNE'S PROBLEM TO SOLVE: -->
+<!-- I want to spend less than I earn. I think I spend more than I earn. -->
+<!-- IDEAS: -->
+<!-- ratio spent : earned -->
+
+<!-- Fixed recurring expenses aside, out of my variable expenses, I think I spend the most on eating out -->
+<!-- IDEAS: -->
+<!-- input fixed expenses -->
+<!-- input rest of variable expenses -->
+<!-- input eating out expenses for 1 wk, 1 mo -->
+<!-- input grocery expenses for 1 wk, 1 mo -->
+
+<!-- Why? -->
+<!-- 1) I think I eat out too frequently, both alone and with people -->
+<!-- IDEAS: -->
+<!-- 3rd-party API: sunrise calendar currently integrates my swarm checkins, can I get this data for restaurants and cafés? -->
+<!-- weekly tally of # times ate out -->
+
+<!-- 2) I think that for each meal, I spend on avg >$20 -->
+<!-- IDEAS: -->
+<!-- take weekly eating out spending, and calculate avg -->
+
+<!-- 3) I also really love trying new places, new foods -->
+<!-- IDEAS: -->
+<!-- 3rd-party API: take swarm checkins and return # unique check-ins at restaurants/cafés -->
+
+<!-- 4) I also tend to like 'nice' restaurants, good quality food  -->
+<!-- (ex. hard to go to a random hole in the wall unless I've been recommended that it's good) -->
+<!-- IDEAS: -->
+<!-- 3rd-party API: take swarm checkins at restaurants/cafés and return pie chart of $$ rating -->
+
+<!-- 5) But I also really like to cook -->
+<!-- 6) and sometimes grocery shop, but the grocery store is too far and most nights I don't like shopping post work -->
+<!-- IDEAS: -->
+<!-- ratio eating out : groceries -->
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <p>Hello world! This is HTML5 Boilerplate.</p>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+        <<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+          var sampleData = [
+            {
+              date: 'Wed, Nov 11, 2015',
+              amt: '$5.25',
+              type: 'expense',
+              location: 'Stumptown Coffee Roasters',
+              bucket: 'eating out'
+            },
+            {
+              date: 'Tues, Nov 10, 2015',
+              amt: '$60',
+              type: 'expense',
+              location: 'Associated Supermarket',
+              bucket: 'groceries'
+            }
+          ];
+
+        </script> 
+    </body>
+</html>
