@@ -38,7 +38,7 @@ var expenses_wk1 = [
   { date: 'November 11, 2015',  type: 'expense',  category: 'Food & Drink',   cost: -12.79,  place: 'No. 7 Sub', tags: []},
   { date: 'November 11, 2015',  type: 'expense',  category: 'Food & Drink',   cost: -5.25,   place: 'Stumptown Coffee Roasters', tags: []}
 ];
-var expense_wk2 = [
+var expenses_wk2 = [
   { date: 'November 12, 2015',  type: 'expense',  category: 'Food & Drink',   cost: -5.28,   place: 'Roasting Plant Coffee', tags: []},
   { date: 'November 12, 2015',  type: 'expense',  category: 'Groceries',      cost: -2.00,    place: 'not provided', tags: []}, 
   { date: 'November 12, 2015',  type: 'expense',  category: 'Food & Drink',   cost: -25.00,  place: 'Chimu Express', tags: []},
@@ -59,8 +59,8 @@ function timesDidSomething(wk, category){
     return expense['category'] === category ? count + 1 : count; 
   }, 0);
 }
-console.log(timesDidSomething(expenses_wk1, 'Food & Drink'));
-console.log(timesDidSomething(expenses_wk1, 'Groceries'));
+console.log('Times I ate out:', timesDidSomething(expenses_wk1, 'Food & Drink'));
+console.log('Times I did groceries:', timesDidSomething(expenses_wk1, 'Groceries'));
 
 // Calc total cost on eating out and groceries
 function totalCost(wk, category){
@@ -68,12 +68,27 @@ function totalCost(wk, category){
     return expense['category'] === category ? total + expense['cost'] : total;
   }, 0);
 }
-console.log(totalCost(expenses_wk1, 'Food & Drink'));
-console.log(totalCost(expenses_wk1, 'Groceries'));
+console.log('Total eating out expense this week: $', totalCost(expenses_wk1, 'Food & Drink'));
+console.log('Total groceries expense this week: $', totalCost(expenses_wk1, 'Groceries'));
+
+// Calc avg money spent on dining out that wk
+function avgCost(wk, category){
+  return Math.round( (totalCost(wk, category) / timesDidSomething(wk, category)) * 100 ) / 100;
+}
+console.log('Avg meal cost this wk: $', avgCost(expenses_wk1, 'Food & Drink')); 
+console.log('Avg meal cost this wk: $', avgCost(expenses_wk2, 'Food & Drink')); 
+
+// Calc avg daily spending on dining out
+function avgDailySpending(wk, category){
+  return Math.round( (totalCost(wk, category) / 7) * 100 ) / 100;
+}
+console.log('Avg daily spending this wk on eating out: $', avgDailySpending(expenses_wk1, 'Food & Drink')); 
+console.log('Avg daily spending this wk on eating out: $', avgDailySpending(expenses_wk2, 'Food & Drink')); 
 
 // Calc ratio eating out : groceries
 function compareExpenses(wk, category1, category2){
-  var ratio = Math.round(totalCost(wk, category1) / totalCost(wk, category2));
+  var ratio = Math.round( (totalCost(wk, category1) / totalCost(wk, category2)) * 100) / 100;
   return category1 + ' to ' + category2 + ' ratio is ' + ratio + ' : 1';
 }
 console.log(compareExpenses(expenses_wk1, 'Food & Drink', 'Groceries'));
+
